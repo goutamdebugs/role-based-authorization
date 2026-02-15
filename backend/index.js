@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const dbconnect = require('./config/db')
+const router = require('./routers/auth.router')
 
 const app = express()
 app.use(express.json())
@@ -16,7 +17,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-
+app.use('/api',router)
 
 
 const port = 7000
